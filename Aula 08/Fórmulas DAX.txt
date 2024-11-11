@@ -1,0 +1,15 @@
+- Criação da D_Calendário -
+
+D_Calendario = CALENDARAUTO()
+// Não se esqueça de renomear a coluna para Data ref
+Dia = DAY('D Calendario'[Data ref])
+Mês num = MONTH('D_Calendario'[Data ref])
+Ano = YEAR('D_Calendario'[Data ref])
+Mês Extenso = FORMAT('D_Calendario'[Data ref],"mmmm")
+Dia Semana = FORMAT('D_Calendario'[Data ref],"dddd")
+Trimestre = FORMAT('D_Calendario'[Data ref],"Q")&"º T"
+Mês abrev = FORMAT('D_Calendario'[Data ref],"mmm")
+
+- Medidas DAX -
+
+$ Total de Custo = SUMX(F_vendas, F_vendas[preco_custo_unit] * F_vendas[pedidos_qtd])
